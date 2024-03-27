@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- awesome text -->
+    <script src="https://kit.fontawesome.com/5be4b20584.js" crossorigin="anonymous"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- custom styling -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Fluentify</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1 class="logo-text"><span>Fluent</span>ify</h1>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Text</a></li>
+                <li><a href="twisters.html">Practice</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user"></i>
+                        Profile
+                        <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+                    </a>
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="{{ url_for('login') }}" class="logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>  
+        </div>
+    </header>
+    <div class="centered-textbox">
+        <div class="textarea-with-label">
+            <label for="tx1" class="textarea-label"><b>Message to be Spoken:</b></label>
+            <textarea id="tx1" name="tx1" rows="10" cols="60" readonly></textarea>
+        </div>
+        <button class="mic-button" aria-label="Dictate"><i class="fas fa-microphone"></i></button>
+        <div class="textarea-with-label">
+            <label for="tx2" class="textarea-label"><b>Final Transcripted Text:</b></label>
+            <textarea id="tx2" name="tx2" rows="10" cols="60" readonly></textarea>
+        </div>
+        <input type="submit" id="bt" value="Submit">
+    </div>
+    <script>
+        // Retrieve the stored content from localStorage
+        const storedMessage = localStorage.getItem('messageToBeSpoken');
+    
+        // Check if there's stored content
+        if (storedMessage) {
+            // Set the stored content to the textarea
+            document.getElementById('tx1').value = removePunctuation(storedMessage);
+    
+            // Clear the stored content from localStorage
+            localStorage.removeItem('messageToBeSpoken');
+        }
+
+        // Function to remove punctuation marks from the text
+        function removePunctuation(text) {
+            return text.replace(/[^\w\s]/g, ''); // Replace non-word characters (excluding spaces) with an empty string
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	form {
+		margin-top: 10px; /* Add margin to the top of the form */
+	}
+	body 
+		{
+			font-family: Arial, Helvetica, sans-serif;
+		margin-left: 25%;
+		margin-right: 25%;
+		border: 1px solid #000000;
+		margin-bottom: 5px;
+		padding: 0px 15px 0 15px;
+		background: url('https://img.freepik.com/free-vector/abstract-watercolor-background-concept_23-2148825784.jpg?w=900&t=st=1709925202~exp=1709925802~hmac=830010adafc0343a24aa4724ae1a5d521ff28b798e4744cffc79ef121a0bcecc');
+		background-size: cover;
+		}
+		form {
+		margin-top: 10px; /* Add margin to the top of the form */
+	}
+	
+	input[type=text], input[type=password] 
+		{
+		width: 97%;
+		padding: 10px;
+		margin: 5px 0 22px 0;
+		display: inline-block;
+		border: none;
+		background: #F5F5F5;
+		}
+	hr 
+		{
+		border: 1px solid #e6e6e6;
+		margin-bottom: 5px;
+		}
+	.registerbutton
+		{
+		background-color: #29a329;
+		color: white;
+		padding: 15px 20px;
+		margin: 10px 0px;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		text:bold;
+		}
+		.alert {
+            padding: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+  #flash-messages {
+            position: fixed;
+            top: 10px;
+            right: 5px;
+            width: 250px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            animation: slideInDown 0.5s ease-in-out;
+        }
+
+        /* Animation for flashed messages */
+  @keyframes slideInDown {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 10px;
+                opacity: 1;
+            }
+        }
+
+</style>
+
+</head>
+<body>
+	
+	<form action="#" method="post">
+        
+		<h1>Register</h1>
+		<p>Please fill in this form to create an account.</p>
+		<hr>
+		
+		<label for="name"><b>Name</b></label>
+		<input type="text" placeholder="Enter Your Name" name="name" required><br>
+		
+		<label for="number"><b>Contact No.</b></label>
+		<input type="text" placeholder="Enter Your Contact No." name="number" required><br>
+		
+		<label for="email"><b>Email</b></label> 
+		<input type="text" placeholder="Enter Your E-mail" name="email" required><br>
+
+		<label for="pwd"><b>Password</b></label>
+		<input type="password" placeholder="Enter Your Password" name="psw" required><br>
+
+		<label for="pwd1"><b>Confirm Password</b></label>
+		<input type="password" placeholder="Enter Your Password" name="psw1" required><br>
+
+		<label for="security_ques"><b>Security Question:</b> Who is your favourite teacher ? </label><br>
+		<input type="text" placeholder="Enter Your Answer" name="security_answer" required><br>
+
+		<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+		<button type="submit" class="registerbutton">Register</button>		
+		<p>Already have an account? <a href="{{ url_for('login') }}">Sign in</a>.</p>
+		
+	</form>
+	<div id="flash-messages">
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for category, message in messages %}
+					<div class="alert alert-{{ category }}">{{ message }}</div>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	</div>   
+
+</body>
+</html>

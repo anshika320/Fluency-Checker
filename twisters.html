@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tongue Twisters</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #5f9ea0;
+        margin: 0;
+        padding: 0;
+    }
+    .prev-page-arrow{
+    display: block;
+    width: 50px;
+    height: 30px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 30px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border-radius: 20%;
+    transition: background-color 0.3s;
+}
+.prev-page-arrow:hover{
+    background-color: #999;
+}
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    }
+    .title {
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    .tongue-twister {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #B0E0E6;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    .tongue-twister:hover {
+        transform: scale(1.05);
+        background-color: #f0ffff;
+    }
+</style>
+</head>
+<body>
+    <a class="prev-page-arrow" href="index.html" onclick="history.go(-1); return false;">&larr;</a>
+<div class="title">Tongue Twisters For Practice</div>
+<div class="container">
+    <div class="tongue-twister" onclick="alert('How can a clam cram in a clean cream can?')">How can a clam cram in a clean cream can?</div>
+    <div class="tongue-twister" onclick="alert('She sells sea shells by the sea shore.')">She sells sea shells by the sea shore.</div>
+    <div class="tongue-twister" onclick="alert('Peter Piper picked a peck of pickled peppers.')">Peter Piper picked a peck of pickled peppers.</div>
+    <div class="tongue-twister" onclick="alert('Betty Botter bought some butter but she said the butter’s bitter.')">Betty Botter bought some butter but she said the butter’s bitter.</div>
+    <!-- Add more tongue twisters here -->
+</div>
+
+</body>
+</html>

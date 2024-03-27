@@ -1,0 +1,199 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #f6f6f6;
+    font-family: 'Lora',serif;
+    background-image: url('https://img.freepik.com/free-vector/abstract-watercolor-background-concept_23-2148825784.jpg?w=900&t=st=1709925202~exp=1709925802~hmac=830010adafc0343a24aa4724ae1a5d521ff28b798e4744cffc79ef121a0bcecc'); 
+}
+header{
+    background-color: #008489;
+    height: 66px;
+}
+header *{
+    color:white;
+}
+header .logo{
+    float: left;
+    height: inherit;
+    margin-left:2em;
+}
+header.logo-text{
+    margin: 8px;
+    font-family: 'Candal', serif;
+}
+header .logo-text span{
+    color: #b0e0e6;
+}
+header ul{
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+header ul li{
+    float: left;
+    position: relative;
+}
+header ul li ul{
+    position: absolute;
+    top: 66 px;
+    right: 0px;
+    width: 130px;
+    display: none;
+}
+header ul li:hover ul{
+    display: block;
+}
+header ul li ul li{
+    width: 100%;
+}
+header ul li ul li a{
+    padding: 10px;
+    background: white;
+    color: #444;
+}
+header ul li ul li a.logout{
+    color: red;
+}
+header ul li ul li a:hover{
+    background: #d5d6d6;
+}
+header ul li a{
+    display: block;
+    padding: 21px;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+header ul li a:hover{
+    background:#006669;
+    transition: 0.5s;
+}
+header .menu-toggle{
+    display: none;
+}
+input[type="submit"] {
+    padding: 5px; /* Add padding to the submit button */
+}
+.centered-textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the flex items (children) on the cross axis (horizontally for column direction) */
+    justify-content: center;
+    gap: 10px; /* Adds space between each item */
+    height: calc(100vh - 70px);
+    height: calc(100vh - 70px); /* Adjusted height to be centered within the header */
+}
+
+#tx {
+    width: 75%;
+    margin-bottom: 5px; /* Add margin for spacing */
+}
+#bt{
+    padding: 7px 20px; /* Increase padding for a larger button */
+    font-size: 12px; /* Increase font size for larger text */
+    margin-top: 10px; /* Add some space above the button */
+    cursor: pointer; /* Changes the cursor on hover to indicate it's clickable */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Optional: Adds rounded corners to the button */
+    background-color: #008489; /* Button color */
+    color: white; /* Text color */
+    transition: background-color 0.3s;
+}
+textarea {
+    width: 600px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    border: 2px solid #008489; /* Added border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Internal spacing */
+    resize: none; /* Disables resizing */
+    margin-bottom: 5px; /
+    width: 75%;
+    margin-bottom: 5px;
+}
+.textarea-container {
+    display: flex;
+    align-items: center; /* Keep items vertically aligned */
+    justify-content: space-between; /* Adjust this as necessary */
+}
+
+.mic-button {
+    display: block; /* Make the button a block-level element to take up its own line */
+    margin: 10px auto; /* Center the button horizontally */
+    padding: 5px 10px; /* Adjust padding as necessary */
+    font-size: 16px; /* Adjust size as necessary */
+    cursor: pointer;
+    background-color: #008489; /* Example button color */
+    color: white; /* Example text color */
+    border: none;
+    border-radius: 5px;
+}
+
+/* Ensure the button icon size is appropriate */
+.mic-button i {
+    font-size: 24px; /* Adjust the icon size as necessary */
+}
+
+.textarea-with-label {
+    display: flex; /* This makes the label and the textarea align horizontally */
+    align-items: center; /* This centers them vertically relative to each other */
+    gap: 10px; /* Adds some space between the label and the textarea */
+    margin-bottom: 5px; /* Ensures some space below the wrapped elements before the microphone button */
+}
+
+.textarea-label {
+    white-space: nowrap; /* Prevents the label from wrapping */
+    margin-right: 10px; /* Optional: adds some space between the label and the textarea */
+}
+#id{
+    display: flex; /* This makes the label and the textarea align horizontally */
+    align-items: center; /* This centers them vertically relative to each other */
+    gap: 10px; /* Adds some space between the label and the textarea */
+    margin-bottom: 5px; 
+    white-space: nowrap; /* Prevents the label from wrapping */
+    margin-right: 10px;
+}
+
+.centered-textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px; /* Adjust this value as needed to create space below the navbar */
+}
+
+.textarea-with-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%; /* Ensure the container takes up full width */
+    justify-content: center; /* Center the content */
+}
+
+.textarea-label {
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+textarea {
+    width: 600px; /* Or any fixed value to keep the size consistent */
+    height: 150px;
+    border: 2px solid #008489;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+}
+
+.mic-button {
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #008489;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

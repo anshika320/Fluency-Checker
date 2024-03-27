@@ -1,0 +1,28 @@
+*{
+    margin:0px;
+    padding:0px;
+    background-image: url('https://img.freepik.com/free-vector/abstract-watercolor-background-concept_23-2148825784.jpg?w=900&t=st=1709925202~exp=1709925802~hmac=830010adafc0343a24aa4724ae1a5d521ff28b798e4744cffc79ef121a0bcecc'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.main{
+    width:330px;
+    border:03px solid #14acac;
+    padding:8px;
+    border-radius: 30px;
+}
+input{
+    background: transparent;
+    border: 0px;
+    outline: 0px;
+    width: 300px;
+}
+body{
+    display:flex;
+    justify-content: center;
+    margin-top: 250px;
+}
+.icon-search{
+    color:#14acac;
+    font-size:20px;
+}

@@ -1,0 +1,230 @@
+<!-- recover_password.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+ 
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Recovery</title>
+
+    <style>
+
+        body {
+
+            background: url('https://img.freepik.com/free-vector/abstract-watercolor-background-concept_23-2148825784.jpg?w=900&t=st=1709925202~exp=1709925802~hmac=830010adafc0343a24aa4724ae1a5d521ff28b798e4744cffc79ef121a0bcecc');
+
+            background-size: cover;
+
+            font-family: 'Poppins', sans-serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 100vh;
+
+        }
+
+       
+
+        .container {
+
+            background: rgba(255, 255, 255, 0.9);
+
+            width: 300px;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+       
+
+        h2 {
+
+            color: #555;
+
+            margin: 0;
+
+        }
+
+       
+
+        form {
+
+            margin-top: 20px;
+
+        }
+
+       
+
+        label {
+
+            font-size: 16px;
+
+            margin-bottom: 8px;
+
+            display: block;
+
+            color: #333;
+
+        }
+
+       
+
+        input {
+
+            width: 100%;
+
+            padding: 10px;
+
+            margin-bottom: 16px;
+
+            font-size: 16px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 4px;
+
+            box-sizing: border-box;
+
+        }
+
+       
+
+        input[type="submit"] {
+
+            background: #4b8269;
+
+            color: #fff;
+
+            cursor: pointer;
+
+        }
+        .text{
+           text-align:center;
+           font-weight:bold; 
+           font-size:1.4em;
+        }
+        .message-box {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover {
+
+            background: #258cd1;
+
+        }
+        .alert {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+  #flash-messages {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            animation: slideInDown 0.5s ease-in-out;
+        }
+
+        /* Animation for flashed messages */
+  @keyframes slideInDown {
+            from {
+                top: -200px;
+                opacity: -10;
+            }
+            to {
+                top: 10px;
+                opacity: 1;
+            }
+        }
+  
+    </style>
+    <meta http-equiv="refresh" content="15">
+</head>
+
+ 
+
+<body>
+
+ 
+
+    
+        <div class="container">
+            <label for="show" class="close-btn fas fa-times" title="close"></label>
+            <div class="text">
+               Password Recovery
+            </div>
+        <form action="#" method="post">
+            <label for="email">Email:</label>
+
+            <input type="text" id="email" name="email" required>
+
+            <br>
+            
+            <label for="security_ques"><b>Security Question:</b> Who is your favourite teacher ? </label>
+            <label for="security_answer">Enter your Answer:</label>
+            <br>
+
+            <input type="text" id="security_answer" name="security_answer" required>
+            <br>
+            <label for="password">New Password:</label>
+
+            <input type="password" id="password" name="password" required>
+
+            <br>
+            <input type="submit" value="Recover Password">
+            
+            
+
+        </form>
+        <div id="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>      
+  
+
+</body>
+</html>
